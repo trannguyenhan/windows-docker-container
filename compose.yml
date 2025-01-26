@@ -4,6 +4,8 @@ services:
     container_name: windows
     environment:
       VERSION: "11"
+      USERNAME: "admin"
+      PASSWORD: "admin"
     devices:
       - /dev/kvm
       - /dev/net/tun
@@ -14,3 +16,6 @@ services:
       - 3389:3389/tcp
       - 3389:3389/udp
     stop_grace_period: 2m
+    volumes:
+      - ./win:/storage
+      - /media/trannguyenhan/USB1/data:/data
